@@ -1,0 +1,35 @@
+# Provider and model configuration
+# API keys are loaded from environment variables
+
+models:
+  gpt-4o:
+    provider: openai
+    model_id: gpt-4o
+    supports_tools: true
+    supports_structured_output: true
+    
+  gpt-4o-mini:
+    provider: openai
+    model_id: gpt-4o-mini
+    supports_tools: true
+    supports_structured_output: true
+    
+  claude-sonnet:
+    provider: anthropic
+    model_id: claude-sonnet-4-20250514
+    supports_tools: true
+    
+  claude-haiku:
+    provider: anthropic
+    model_id: claude-3-5-haiku-latest
+    supports_tools: true
+    
+  mistral-medium:
+    provider: mistral
+    model_id: mistral-medium-latest
+    supports_tools: true
+    
+  mistral-large:
+    provider: mistral
+    model_id: mistral-large-latest
+    supports_tools: true

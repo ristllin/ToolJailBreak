@@ -1,0 +1,19 @@
+# Adversary agent configuration
+
+# Model to use for adversary
+model: mistral-medium-latest
+provider: mistral
+
+# Attack settings
+max_attempts: 5
+early_stop_on_success: true
+
+# Memory settings
+memory_size: 10
+
+# Strategies to use
+strategies:
+  - web_injection
+  - code_injection
+  - split_payload
+  - metadata_injection

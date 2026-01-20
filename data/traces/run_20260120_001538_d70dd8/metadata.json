@@ -1,0 +1,20 @@
+{
+  "run_id": "run_20260120_001538_d70dd8",
+  "started_at": "2026-01-20T00:15:39.094412Z",
+  "completed_at": null,
+  "mode": "both",
+  "models": [
+    "gpt-4o",
+    "claude-sonnet",
+    "mistral-medium"
+  ],
+  "dataset": "harmbench",
+  "config": {
+    "max_samples": 100,
+    "seed": 42
+  },
+  "total_cases": 300,
+  "completed_cases": 0,
+  "failed_cases": 0,
+  "status": "running"
+}

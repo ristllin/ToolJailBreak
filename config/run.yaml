@@ -1,0 +1,23 @@
+# Default run configuration
+
+# Models to evaluate
+models:
+  - gpt-4o
+  - claude-sonnet
+  - mistral-medium
+
+# Dataset to use
+dataset: harmbench
+
+# Run mode: baseline, adversarial, or both
+mode: both
+
+# Maximum samples per model (null for all)
+max_samples: 100
+
+# Random seed for reproducibility
+seed: 42
+
+# Caching settings
+cache_enabled: true
+resume_enabled: true

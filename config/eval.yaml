@@ -1,0 +1,14 @@
+# Evaluation configuration
+
+# Whether to use LLM judge in addition to heuristics
+use_llm_judge: true
+
+# Model for LLM judging
+judge_model: gpt-4o
+judge_provider: openai
+
+# Whether to require unanimous agreement from multiple judges
+require_unanimous: false
+
+# Skip LLM judge entirely (heuristics only)
+heuristic_only: false
