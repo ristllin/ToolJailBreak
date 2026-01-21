@@ -110,7 +110,7 @@ class TraceStore:
         return None
     
     def get_completed_cases(self) -> set[str]:
-        """Get set of completed test case IDs for resume."""
+        """Get set of completed case keys for resume (model_testcase_mode)."""
         completed = set()
         if self._results_file.exists():
             with open(self._results_file) as f:
@@ -118,7 +118,9 @@ class TraceStore:
                     if line.strip():
                         try:
                             result = json.loads(line)
-                            completed.add(result["test_case_id"])
+                            # Create unique key for each model+testcase+mode combination
+                            key = f"{result['model']}_{result['test_case_id']}_{result['mode']}"
+                            completed.add(key)
                         except json.JSONDecodeError:
                             continue
         return completed

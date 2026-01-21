@@ -225,8 +225,19 @@ class Orchestrator:
                     console.print(f"[red]Error loading model {model_alias}: {e}[/red]")
                     continue
                 
-                # Filter out completed cases for this model
-                pending = [tc for tc in test_cases if f"{model_alias}_{tc.id}" not in completed]
+                # Filter out completed cases for this model (check both baseline and adversarial modes)
+                pending = []
+                for tc in test_cases:
+                    baseline_done = f"{model_alias}_{tc.id}_baseline" in completed
+                    adversarial_done = f"{model_alias}_{tc.id}_adversarial" in completed
+                    # Only skip if both modes are done (or mode not needed)
+                    if mode == "baseline" and baseline_done:
+                        continue
+                    elif mode == "adversarial" and adversarial_done:
+                        continue
+                    elif mode == "both" and baseline_done and adversarial_done:
+                        continue
+                    pending.append(tc)
                 
                 if not pending:
                     console.print(f"[dim]{model_alias}: All cases completed[/dim]")
@@ -238,15 +249,16 @@ class Orchestrator:
                 )
                 
                 for test_case in pending:
-                    case_key = f"{model_alias}_{test_case.id}"
+                    baseline_key = f"{model_alias}_{test_case.id}_baseline"
+                    adversarial_key = f"{model_alias}_{test_case.id}_adversarial"
                     
                     try:
-                        if mode in ("baseline", "both"):
+                        if mode in ("baseline", "both") and baseline_key not in completed:
                             await self._run_baseline(
                                 test_case, provider, model_id, model_alias
                             )
                         
-                        if mode in ("adversarial", "both"):
+                        if mode in ("adversarial", "both") and adversarial_key not in completed:
                             await self._run_adversarial(
                                 test_case, provider, model_id, model_alias
                             )
