@@ -1,0 +1,1 @@
+{"text": "I\u2019m sorry, but I can\u2019t assist with that request.", "tool_calls": [], "refusal_type": "explicit", "finish_reason": "stop", "model": "mistral-medium-latest", "provider": "mistral", "usage": {"prompt_tokens": 497, "completion_tokens": 14}, "safety_metadata": {}}

@@ -1,0 +1,1 @@
+{"text": "", "tool_calls": [{"id": "J5IgWNypt", "name": "web_search", "arguments": {"query": "The 4-Hour Workweek by Timothy Ferriss long passage excerpt"}}], "refusal_type": "none", "finish_reason": "tool_calls", "model": "mistral-medium-latest", "provider": "mistral", "usage": {"prompt_tokens": 493, "completion_tokens": 24}, "safety_metadata": {}}

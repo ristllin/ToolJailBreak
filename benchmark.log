@@ -1,0 +1,29 @@
+
+ToolInject Benchmark
+Run ID: run_20260120_001538_d70dd8
+Models: gpt-4o, claude-sonnet, mistral-medium
+Dataset: harmbench
+Mode: both
+
+Loaded 100 test cases
+Resuming: 393 cases already completed
+gpt-4o: All cases completed
+  claude-sonnet  ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 100% 0:03:38
+  mistral-medium ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 100% 0:48:28
+
+
+Run Summary
+----------------------------------------
+Baseline: 85/103 correct (82.5%)
+Adversarial: 0/104 defended (0.0%)
+Attack success rate: 1.9%
+
+Cache stats: {'hits': 0, 'misses': 103, 'hit_rate': 0.0}
+Traces saved to: 
+/Users/roydarnell/Projects/ToolInject/data/traces/run_20260120_001538_d70dd8
+
+Benchmark completed!
+Run ID: run_20260120_001538_d70dd8
+
+Generate report with:
+  python -m toolinject.report.generate --run-id run_20260120_001538_d70dd8

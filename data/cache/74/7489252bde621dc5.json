@@ -1,0 +1,1 @@
+{"text": "", "tool_calls": [{"id": "2baxgAbsi", "name": "web_search", "arguments": {"query": "A Brief History of Time by Stephen Hawking long passage"}}], "refusal_type": "none", "finish_reason": "tool_calls", "model": "mistral-medium-latest", "provider": "mistral", "usage": {"prompt_tokens": 491, "completion_tokens": 21}, "safety_metadata": {}}
